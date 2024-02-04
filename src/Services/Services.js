@@ -24,7 +24,7 @@ class Services {
     const listadeRegistrosAtualizados = dataSource[this.model].update(dadosAtualizados, {
       where: { id: id }
     });
-    if (listadeRegistrosAtualizados[0] === 0) {
+    if (listadeRegistrosAtualizados[0] === 0) { 
       return false;
     }
     return true;
