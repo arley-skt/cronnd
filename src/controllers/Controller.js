@@ -37,6 +37,7 @@ class Controller {
       const dadosParaCriacao = req.body;
       try {
         const novoRegistroCriado = await this.entidadeService.criaCron(dadosParaCriacao);
+        console.log(novoRegistroCriado);
         return res.status(200).json(novoRegistroCriado);
       } catch (erro) {
         console.log(erro);
