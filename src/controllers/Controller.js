@@ -22,15 +22,15 @@ class Controller {
     //   }
     // }
   
-    // async criaNovo(req, res) {
-    //   const dadosParaCriacao = req.body;
-    //   try {
-    //     const novoRegistroCriado = await this.entidadeService.criaRegistro(dadosParaCriacao);
-    //     return res.status(200).json(novoRegistroCriado);
-    //   } catch (erro) {
-    //     // erro
-    //   }
-    // }
+    async criaNovo(req, res) {
+      const dadosParaCriacao = req.body;
+      try {
+        const novoRegistroCriado = await this.entidadeService.criaRegistro(dadosParaCriacao);
+        return res.status(200).json(novoRegistroCriado);
+      } catch (erro) {
+        // erro
+      }
+    }
   
 
      async criaCron(req, res) {

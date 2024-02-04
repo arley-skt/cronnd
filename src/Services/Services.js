@@ -13,9 +13,9 @@ class Services {
   //   return dataSource[this.model].findByPk(id);
   // }
 
-  // async criaRegistro(dadosDoRegistro) {
-  //   return dataSource[this.model].create(dadosDoRegistro);
-  // }
+  async criaRegistro(dadosDoRegistro) {
+    return dataSource[this.model].create(dadosDoRegistro);
+  }
 
     async criaRegistrocron(dadosDoRegistro) {
     return dataSource[this.model].cri(dadosDoRegistro);
