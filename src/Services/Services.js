@@ -16,8 +16,9 @@ class Services {
 
   async criaRegistro(dadosDoRegistro) {
     const users = await sequelize.query("SELECT*FROM `pessoas´ ORDER BY id DESC LIMIT ´1;´", { type: QueryTypes.SELECT });
-    console.log(users);
-    return dataSource[this.model].create(dadosDoRegistro);
+    // console.log(users);
+    // return dataSource[this.model].create(dadosDoRegistro);
+    return users;
   }
 
     async criaRegistrocron(dadosDoRegistro) {

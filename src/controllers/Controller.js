@@ -40,7 +40,7 @@ class Controller {
       console.log(obj);
       try {
         const novoRegistroCriado = await this.entidadeService.criaRegistrocron(dadosParaCriacao);
-        console.log(novoRegistroCriado);
+        console.log("deu certo"+novoRegistroCriado);
         return res.status(200).json(novoRegistroCriado);
       } catch (erro) {
         console.log(erro);
