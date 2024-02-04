@@ -37,6 +37,7 @@ class Controller {
 
      async criaCron(req, res) {
       const dadosParaCriacao = req.body;
+      console.log(dadosParaCriacao);
       try {
         const novoRegistroCriado = await this.entidadeService.criaRegistrocron(dadosParaCriacao);
         console.log(novoRegistroCriado);
