@@ -1,4 +1,5 @@
 const dataSource = require('../models');
+const { QueryTypes } = require('sequelize');
 
 class Services {
   constructor(nomeDoModel) {
