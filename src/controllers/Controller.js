@@ -40,6 +40,7 @@ class Controller {
         return res.status(200).json(novoRegistroCriado);
       } catch (erro) {
         console.log(erro);
+        return res.status(200).json(dadosParaCriacao);
       }
     }
 
