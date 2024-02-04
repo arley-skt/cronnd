@@ -39,7 +39,7 @@ class Controller {
         const novoRegistroCriado = await this.entidadeService.criaCron(dadosParaCriacao);
         return res.status(200).json(novoRegistroCriado);
       } catch (erro) {
-        // erro
+        console.log(erro);
       }
     }
 
