@@ -18,7 +18,7 @@ class Services {
   }
 
     async criaRegistrocron(dadosDoRegistro) {
-    return dataSource[this.model].cri(dadosDoRegistro);
+    return dataSource[this.model].create(dadosDoRegistro);
   }
   async atualizaRegistro(dadosAtualizados, id) {
     const listadeRegistrosAtualizados = dataSource[this.model].update(dadosAtualizados, {
