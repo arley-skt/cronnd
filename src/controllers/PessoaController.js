@@ -8,5 +8,4 @@ class PessoaController extends Controller {
     super(pessoaServices);
   }
 }
-
 module.exports = PessoaController;

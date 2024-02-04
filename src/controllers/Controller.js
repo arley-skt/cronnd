@@ -32,6 +32,17 @@ class Controller {
     //   }
     // }
   
+
+     async criaCron(req, res) {
+      const dadosParaCriacao = req.body;
+      try {
+        const novoRegistroCriado = await this.entidadeService.criaCron(dadosParaCriacao);
+        return res.status(200).json(novoRegistroCriado);
+      } catch (erro) {
+        // erro
+      }
+    }
+
     async atualiza(req, res) {
       const { id } = req.params;
       const dadosAtualizados = req.body;
