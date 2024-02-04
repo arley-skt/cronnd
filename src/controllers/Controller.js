@@ -26,9 +26,11 @@ class Controller {
       const dadosParaCriacao = req.body;
       try {
         const novoRegistroCriado = await this.entidadeService.criaRegistro(dadosParaCriacao);
+        console.log(novoRegistroCriado);
         return res.status(200).json(novoRegistroCriado);
       } catch (erro) {
-        // erro
+        console.log(erro);
+        return res.status(200).json(dadosParaCriacao);
       }
     }
   
