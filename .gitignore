@@ -1,2 +1,3 @@
 node_modules
 vm-node_key.pem
+.env
