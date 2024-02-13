@@ -19,6 +19,8 @@ class Services {
    }
 
   async pegaTodosOsRegistros () {
+    var resultado = dataSource[this.model].findAll();
+    console.log (resultado);
     return dataSource[this.model].findAll();
   }
 

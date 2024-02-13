@@ -13,13 +13,8 @@ class PessoaServices extends Services {
 
     return x;
     }catch(erro){
-
-    }
-     //return pessoadobanco;
-   }
-   
 }
-
-
-
+     //return pessoadobanco;
+}
+}
 module.exports = PessoaServices;

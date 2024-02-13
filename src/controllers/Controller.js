@@ -11,6 +11,16 @@ class Controller {
         // erro
       }
     }
+
+    async novoPedido(req, res) {
+      try {
+        var novopedido = req.body;
+        var listaDeRegistro = await this.entidadeService.novoPedido(novopedido);
+        return res.status(200).json(listaDeRegistro);
+      } catch (erro) {
+        // erro
+      }
+    }
   
     // async pegaUmPorId(req, res) {
     //   const { id } = req.params;
@@ -31,7 +41,7 @@ class Controller {
       } catch (erro) {
         console.log(erro);
         return res.status(200).json(dadosParaCriacao);
-      }
+      } 
     }
   
 
