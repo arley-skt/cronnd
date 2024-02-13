@@ -1,11 +1,11 @@
 'use strict';
 
-const { UUIDV4, DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('pessoas', {
+    await queryInterface.createTable('pedidos', {
       id: {
         allowNull: false,
         // autoIncrement: true,
@@ -13,26 +13,22 @@ module.exports = {
         defaultValue: DataTypes.UUIDV4,
         type: DataTypes.UUID
       },
-      nome: {
+      descricao: {
         type: Sequelize.STRING
       },
-      email: {
+      data_inicio: {
+        type: Sequelize.DATEONLY
+      },
+      pessoa_id: {
+        allowNull: false,
+        type: Sequelize.UUID,
+        references: { model: 'pessoas', key: 'id' }
+    },
+      status: {
         type: Sequelize.STRING
       },
-      cpf: {
-        type: Sequelize.STRING
-      },
-    //   pedido_id: {
-    //     allowNull: false,
-    //     type: Sequelize.UUID,
-    //     references: { model: 'pedidos', key: 'id' }
-    // }
-    //   ,
-      ativo: {
-        type: Sequelize.BOOLEAN
-      },
-      role: {
-        type: Sequelize.STRING
+      data_entrega: {
+        type: Sequelize.DATEONLY
       },
       createdAt: {
         allowNull: false,
@@ -45,6 +41,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('pessoas');
+    await queryInterface.dropTable('pedidos');
   }
 };

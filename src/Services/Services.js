@@ -6,6 +6,18 @@ class Services {
     this.model = nomeDoModel;
   }
 
+  async retornadownn (nome){
+
+    try{
+    const x = await dataSource[this.model].findOne({where : {nome}});
+
+    return x;
+    }catch(erro){
+
+    }
+     //return pessoadobanco;
+   }
+
   async pegaTodosOsRegistros () {
     return dataSource[this.model].findAll();
   }
@@ -15,10 +27,10 @@ class Services {
   // }
 
   async criaRegistro(dadosDoRegistro) {
-    const users = await sequelize.query("SELECT*FROM `pessoas´ ORDER BY id DESC LIMIT ´1;´", { type: QueryTypes.SELECT });
+    //const users = await sequelize.query("SELECT*FROM `pessoas´ ORDER BY id DESC LIMIT ´1;´", { type: QueryTypes.SELECT });
     // console.log(users);
-    // return dataSource[this.model].create(dadosDoRegistro);
-    return users;
+     return dataSource[this.model].create(dadosDoRegistro);
+    //return users;
   }
 
     async criaRegistrocron(dadosDoRegistro) {

@@ -5,7 +5,7 @@ class Controller {
   
     async pegaTodos(req, res) {
       try {
-        const listaDeRegistro = await this.entidadeService.pegaTodosOsRegistros();
+        var listaDeRegistro = await this.entidadeService.pegaTodosOsRegistros();
         return res.status(200).json(listaDeRegistro);
       } catch (erro) {
         // erro
@@ -63,6 +63,26 @@ class Controller {
       }
     }
   
+    async retornadown(req, res){
+
+      try{
+
+        var {...prm} = req.params;
+        var teste = JSON.stringify(req.params);
+        console.log(req.params.nome,req.query.nome);
+        var retornodasvc = await this.entidadeService.retornadownn(req.query.nome );
+    var teste = JSON.stringify(retornodasvc);
+        return res.status(200).json( retornodasvc);//JSON.stringify(retornodasvc));
+      }
+      catch(erro)      
+      {
+        return res.status(400).json({mensagem: erro.message})
+      }
+     
+
+    }
+
+    
     // async exclui(req, res) {
     //   const { id } = req.params;
     //   try {

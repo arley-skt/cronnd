@@ -6,13 +6,13 @@ const PORT = 3000;
 app.listen(PORT, () => {
   console.log('servidor escutando!');
 });
-var cron = require('node-cron');
+// var cron = require('node-cron');
 
-var task = cron.schedule('* * * * *', () =>  {
-  console.log('stopped task');
-}, {
-  scheduled: false
-});
+// var task = cron.schedule('* * * * *', () =>  {
+//   console.log('stopped task');
+// }, {
+//   scheduled: false
+// });
 
-task.start();
+// task.start();
 
