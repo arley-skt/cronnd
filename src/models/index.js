@@ -5,10 +5,14 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const process = require('process');
 const basename = path.basename(__filename);
+require('dotenv').config();
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
+config.host =process.env.DATABASE_HOST;
+config.username =process.env.DATABASE_USER;
+config.password =process.env.DATABASE_PASS;
 let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
