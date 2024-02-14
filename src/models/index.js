@@ -13,6 +13,7 @@ const db = {};
 config.host =process.env.DATABASE_HOST;
 config.username =process.env.DATABASE_USER;
 config.password =process.env.DATABASE_PASS;
+
 let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
