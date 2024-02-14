@@ -17,5 +17,15 @@ class PedidoController extends Controller {
       // erro
     }
   }
+  
+  async mercado(req, res) {
+    try {
+      var novopedido = req.body;
+      var listaDeRegistro = await this.entidadeService.mercado(novopedido);
+      return res.status(200).json(listaDeRegistro);
+    } catch (erro) {
+      // erro
+    }
+  }
 }
 module.exports = PedidoController;

@@ -19,6 +19,13 @@ class PedidoServices extends Services {
     //return users;
   }
 
+  async mercado(dadosDoRegistro) {
+    //const users = await sequelize.query("SELECT*FROM `pessoas´ ORDER BY id DESC LIMIT ´1;´", { type: QueryTypes.SELECT });
+    // console.log(users);
+     return await super.criaRegistro(dadosDoRegistro);
+    //return users;
+  }
+
 
      //return pedidodobanco;
 
