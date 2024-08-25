@@ -24,9 +24,16 @@ class Services {
     return dataSource[this.model].findAll();
   }
 
-  // async pegaUmRegistroPorId(id) {
-  //   return dataSource[this.model].findByPk(id);
-  // }
+  async pegaUmRegistroPorId(id) {
+    return dataSource[this.model].findByPk(id);
+  }
+
+  async pegaUmRegistro(where) {
+    var consulta = await dataSource[this.model].findOne({ where: { ...where } });
+    var busca = dataSource[this.model].findOne({ where: { ...where } });
+
+    return busca;
+  }
 
   async criaRegistro(dadosDoRegistro) {
     //const users = await sequelize.query("SELECT*FROM `pessoas´ ORDER BY id DESC LIMIT ´1;´", { type: QueryTypes.SELECT });

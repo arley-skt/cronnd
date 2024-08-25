@@ -1,3 +1,5 @@
+const converteIds = require('../utils/cnvStringHelp.js');
+
 class Controller {
     constructor(entidadeService) {
       this.entidadeService = entidadeService;
@@ -22,15 +24,27 @@ class Controller {
       }
     }
   
-    // async pegaUmPorId(req, res) {
-    //   const { id } = req.params;
-    //   try {
-    //     const umRegistro = await this.entidadeService.pegaUmRegistroPorId(Number(id));
-    //     return res.status(200).json(umRegistro);
-    //   } catch (erro) {
-    //     // erro
-    //   }
-    // }
+    async pegaUmPorId(req, res) {
+      const { ...params } = req.params;
+      const {where} = converteIds(params);
+      console.log(where);
+      try {
+        const umRegistro = await this.entidadeService.pegaUmRegistro(where);
+        return res.status(200).json(umRegistro);
+      } catch (erro) {
+        // erro
+      }
+    }
+
+    async pegaUm(req, res) {
+      const { id } = req.params;
+      try {
+        const umRegistro = await this.entidadeService.pegaUmRegistroPorId(id);
+        return res.status(200).json(umRegistro);
+      } catch (erro) {
+        // erro
+      }
+    }
   
     async criaNovo(req, res) {
       const dadosParaCriacao = req.body;
@@ -63,7 +77,7 @@ class Controller {
       const dadosAtualizados = req.body;
       try {
         //isUpdated
-        const foiAtualizado = await this.entidadeService.atualizaRegistro(dadosAtualizados, Number(id));
+        const foiAtualizado = await this.entidadeService.atualizaRegistro(dadosAtualizados, id);
         if (!foiAtualizado) {
           return res.status(400).json({ mensagem: 'registro não foi atualizado' });
         }
