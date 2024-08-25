@@ -15,5 +15,6 @@ router.delete('/pessoas/:id', (req, res) => pessoaController.exclui(req, res));
 router.get('/pessoascomdown/:nome', (req, res) => pessoaController.retornadown(req, res));
 router.get('/teste', (req, res) => pessoaController.retornadown(req, res));
 router.get('/lauver', (req, res) => pessoaController.retornadown(req, res));
+router.get('/novarota123', (req, res) => pessoaController.retornadown(req, res));
 
 module.exports = router;
